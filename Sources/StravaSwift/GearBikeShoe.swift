@@ -50,6 +50,7 @@ public final class Shoe: Gear {}
  **/
 public final class Bike: Gear {
     public let frameType: FrameType?
+    public let nickname: String?
 
     /**
      Initializer
@@ -59,6 +60,7 @@ public final class Bike: Gear {
      **/
     required public init(_ json: JSON) {
         frameType = json["frame_type"].strava(FrameType.self)
+        nickname = json["nickname"].string
         super.init(json)
     }
 }
