@@ -16,7 +16,7 @@ import SwiftyJSON
  **/
 public enum Router {
 
-    public typealias Id = Int
+    public typealias Id = String
     public typealias Params = [String: Any]?
 
     /**
@@ -269,7 +269,7 @@ public enum Router {
 
      - parameter id: the gear id
      **/
-    case gear(id: String, params: Params)
+    case gear(id: Id, params: Params)
 
     /**
      Retrieves a segment
