@@ -49,18 +49,18 @@ public final class Shoe: Gear {}
  Bike represents a... bike!  The object is returned in summary or detailed representations.
  **/
 public final class Bike: Gear {
-    public let frameType: String?
-    public let nickname: String?
+   public let frameType: FrameType?
+   public let nickname: String?
 
-    /**
-     Initializer
+   /**
+    Initializer
 
-     - Parameter json: SwiftyJSON object
-     - Internal
-     **/
-    required public init(_ json: JSON) {
-        frameType = json["frame_type"].string
-        nickname = json["nickname"].string
-        super.init(json)
-    }
+    - Parameter json: SwiftyJSON object
+    - Internal
+    **/
+   required public init(_ json: JSON) {
+       frameType = json["frame_type"].strava(FrameType.self)
+       nickname = json["nickname"].string
+       super.init(json)
+   }
 }

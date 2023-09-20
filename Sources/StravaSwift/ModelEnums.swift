@@ -213,6 +213,7 @@ public enum FrameType: Int {
     case cross = 2
     case road = 3
     case timeTrial = 4
+    case gravel = 5
 }
 
 /**
