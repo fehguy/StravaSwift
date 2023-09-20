@@ -13,7 +13,7 @@ import SwiftyJSON
  Gear represents equipment used during an activity. The object is returned in summary or detailed representations.
  **/
 open class Gear: Strava {
-    public let id: Int?
+    public let id: String?
     public let primary: Bool?
     public let name: String?
     public let description: String?
@@ -29,7 +29,7 @@ open class Gear: Strava {
      - Internal
      **/
     required public init(_ json: JSON) {
-        id = json["id"].int
+        id = json["id"].string
         primary = json["primary"].bool
         name = json["name"].string
         description = json["description"].string
