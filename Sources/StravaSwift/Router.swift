@@ -16,7 +16,7 @@ import SwiftyJSON
  **/
 public enum Router {
 
-    public typealias Id = String
+    public typealias Id = Int
     public typealias Params = [String: Any]?
 
     /**
