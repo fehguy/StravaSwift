@@ -269,7 +269,7 @@ public enum Router {
 
      - parameter id: the gear id
      **/
-    case gear(id: Id, params: Params)
+    case gear(id: String, params: Params)
 
     /**
      Retrieves a segment
