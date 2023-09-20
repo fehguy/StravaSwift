@@ -13,7 +13,7 @@ import SwiftyJSON
  Gear represents equipment used during an activity. The object is returned in summary or detailed representations.
  **/
 open class Gear: Strava {
-    public let id: String?
+    public let id: Int?
     public let primary: Bool?
     public let name: String?
     public let description: String?
@@ -29,7 +29,7 @@ open class Gear: Strava {
      - Internal
      **/
     required public init(_ json: JSON) {
-        id = json["id"].string
+        id = json["id"].int
         primary = json["primary"].bool
         name = json["name"].string
         description = json["description"].string
@@ -49,7 +49,7 @@ public final class Shoe: Gear {}
  Bike represents a... bike!  The object is returned in summary or detailed representations.
  **/
 public final class Bike: Gear {
-    public let frameType: FrameType?
+    public let frameType: String?
     public let nickname: String?
 
     /**
@@ -59,7 +59,7 @@ public final class Bike: Gear {
      - Internal
      **/
     required public init(_ json: JSON) {
-        frameType = json["frame_type"].strava(FrameType.self)
+        frameType = json["frame_type"].string
         nickname = json["nickname"].string
         super.init(json)
     }
